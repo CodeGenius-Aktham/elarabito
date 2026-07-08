@@ -1,0 +1,66 @@
+/* ============================================================
+   El Arabito - Hoja de estilos
+   Extraída del <style> inline del HTML para mantener el CSS
+   separado del marcado.
+============================================================ */
+
+/* Activa el desplazamiento suave al hacer clic en enlaces con # (anclas del menú) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tipografía y color de fondo general del sitio */
+body {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #f8eee0;
+}
+
+/* Menú móvil: empieza oculto (altura 0) y se expande con transición al abrirse */
+.mobile-menu-animate {
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.mobile-menu-animate.show {
+    max-height: 300px;
+    opacity: 1;
+}
+
+/* Animación de rotación continua para el sticker "¡Esto y mucho más!" */
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
+}
+
+/* Animación de desplazamiento horizontal infinito para la barra de beneficios (marquee) */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+    display: flex;
+    width: max-content;
+}
+
+/* Estilo de "sticker" ovalado usado en las etiquetas de productos (ej. "Mejor vendido") */
+.sticker-badge {
+    border: 2px solid #1e1e80;
+    border-radius: 50% / 60%;
+    transform: rotate(-10deg);
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 14px;
+    color: #1e1e80;
+    font-weight: 800;
+    background: rgba(255,255,255,0.6);
+}
+
+/* Fondo de las imágenes: 100% transparente, sin placeholder gris mientras cargan */
+img {
+    background-color: transparent;
+}
