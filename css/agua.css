@@ -1,0 +1,328 @@
+/* ============================================================
+   El Arabito - Hoja de estilos
+   Extraída del <style> inline del HTML para mantener el CSS
+   separado del marcado.
+============================================================ */
+
+/* Activa el desplazamiento suave al hacer clic en enlaces con # (anclas del menú) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tipografía y color de fondo general del sitio */
+body {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #f8eee0;
+}
+
+/* Menú móvil: empieza oculto (altura 0) y se expande con transición al abrirse */
+.mobile-menu-animate {
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.mobile-menu-animate.show {
+    max-height: 300px;
+    opacity: 1;
+}
+
+/* ============================================================
+   SECCIÓN HERO - GOTA DE AGUA (agregado)
+============================================================ */
+.agua-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+}
+
+.agua-hero {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 480px;
+}
+
+.agua-hero__drop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 420px;
+    height: 420px;
+    background: linear-gradient(135deg, #2b6cff 0%, #0E0482 100%);
+    border-radius: 50% 50% 50% 0;
+    transform: translate(-50%, -40%) rotate(135deg);
+    box-shadow: 0 25px 60px -15px rgba(14, 4, 130, 0.55);
+}
+
+.agua-hero__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    max-width: 480px;
+}
+
+.agua-hero__title {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.agua-hero__subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.agua-hero__btn {
+    display: inline-block;
+    background-color: #f8eee0;
+    color: #0E0482;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 0.85rem 2.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.agua-hero__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -6px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 640px) {
+    .agua-hero__drop {
+        width: 300px;
+        height: 300px;
+    }
+    .agua-hero__title {
+        font-size: 2.5rem;
+    }
+    .agua-hero__subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================
+   OLAS + PROCESO DE PUREZA (agregado)
+============================================================ */
+.agua-proceso {
+    position: relative;
+    background: #0E0482;
+    padding: 0 1.5rem 5rem;
+    margin-top: -1px; /* evita línea fantasma entre secciones */
+}
+
+.agua-proceso__olas {
+    width: 100%;
+    line-height: 0;
+    transform: translateY(-2px);
+}
+.agua-proceso__olas svg {
+    width: 100%;
+    height: 90px;
+    display: block;
+}
+.agua-proceso__olas path {
+    fill: #0E0482;
+}
+
+.agua-proceso__container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.agua-proceso__titulo {
+    font-family: 'Caveat', cursive;
+    font-size: 2.75rem;
+    color: #f8eee0;
+    margin-bottom: 3rem;
+}
+
+/* Círculo contenedor de los pasos */
+.agua-proceso__circulo {
+    position: relative;
+    width: 480px;
+    height: 480px;
+    margin: 0 auto;
+}
+
+/* Guía circular punteada */
+.agua-proceso__guia {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 2px dashed rgba(248, 238, 224, 0.35);
+    border-radius: 50%;
+}
+
+/* Insignia central */
+.agua-proceso__central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    background: #f8eee0;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4);
+}
+.agua-proceso__central-numero {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 1.9rem;
+    color: #0E0482;
+    line-height: 1;
+}
+.agua-proceso__central-texto {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #0E0482;
+}
+
+/* Pasos individuales, posicionados alrededor del círculo (5 pasos, cada 72°) */
+.agua-proceso__paso {
+    position: absolute;
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.agua-proceso__numero {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #f8eee0;
+    color: #0E0482;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px -4px rgba(0,0,0,0.35);
+    margin-bottom: 0.5rem;
+}
+
+.agua-proceso__texto {
+    color: #f8eee0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+/* Posiciones: top=-90°, luego cada 72° en sentido horario, radio 200px desde el centro (240,240) */
+.agua-proceso__paso--1 { top: 40px;   left: 240px; }
+.agua-proceso__paso--2 { top: 178px;  left: 430px; }
+.agua-proceso__paso--3 { top: 402px;  left: 358px; }
+.agua-proceso__paso--4 { top: 402px;  left: 122px; }
+.agua-proceso__paso--5 { top: 178px;  left: 50px;  }
+
+/* Responsive: en pantallas chicas, el círculo se vuelve una lista vertical */
+@media (max-width: 640px) {
+    .agua-proceso__circulo {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .agua-proceso__guia,
+    .agua-proceso__central {
+        display: none;
+    }
+    .agua-proceso__paso {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        width: 100%;
+        max-width: 320px;
+        text-align: left;
+        gap: 1rem;
+    }
+    .agua-proceso__numero {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+}
+
+
+/* ============================================================
+   CTA WHATSAPP (agregado)
+============================================================ */
+.agua-whatsapp {
+    background: #f8eee0;
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+
+.agua-whatsapp__container {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agua-whatsapp__icono {
+    width: 56px;
+    height: 56px;
+    color: #25D366;
+    margin-bottom: 1.25rem;
+}
+
+.agua-whatsapp__titulo {
+    font-family: 'Caveat', cursive;
+    font-size: 2.5rem;
+    color: #0E0482;
+    margin-bottom: 0.5rem;
+}
+
+.agua-whatsapp__subtitulo {
+    color: #0E0482;
+    font-weight: 700;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.agua-whatsapp__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #25D366;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.05rem;
+    padding: 0.9rem 2.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 12px 25px -6px rgba(37, 211, 102, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.agua-whatsapp__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -6px rgba(37, 211, 102, 0.6);
+}
