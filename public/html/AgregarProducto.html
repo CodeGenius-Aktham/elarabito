@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/productos.css">
+    <title>Agregar producto - El Arabito</title>
+</head>
+<body>
+
+    <!-- ======================= BARRA DE NAVEGACIÓN ======================= -->
+    <nav class="w-full bg-[#5D182A] shadow-md relative">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between md:grid md:grid-cols-3">
+            <button id="menu-toggle" class="md:hidden text-white p-2 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+
+            <ul id="menu-links" class="hidden md:flex space-x-6 text-white font-bold text-lg justify-start">
+                <li><a href="/index.html" class="hover:text-red-200 transition-colors">Inicio</a></li>
+                <li><a href="/html/Productos.html" class="hover:text-red-200 transition-colors">Productos</a></li>
+                <li><a href="/html/Agua.html" class="hover:text-red-200 transition-colors">Agua</a></li>
+                <li><a href="/html/Contacto.html" class="hover:text-red-200 transition-colors">Contacto</a></li>
+            </ul>
+
+            <div class="flex justify-center md:col-start-2">
+                <a href="/index.html"><div class="text-2xl text-white font-bold">El Arabito</div></a>
+            </div>
+
+            <div class="hidden md:flex justify-end space-x-5 text-white items-center">
+                <span class="text-amber-300 font-bold text-sm">Panel de administración</span>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu-animate md:hidden bg-[#4a1321] text-white flex flex-col items-center">
+            <a href="/index.html" class="py-4 w-full text-center hover:bg-[#5D182A] menu-link">Inicio</a>
+            <a href="/html/Productos.html" class="py-4 w-full text-center hover:bg-[#5D182A] menu-link">Productos</a>
+            <a href="/html/Agua.html" class="py-4 w-full text-center hover:bg-[#5D182A] menu-link">Agua</a>
+            <a href="/html/Contacto.html" class="py-4 w-full text-center hover:bg-[#5D182A] menu-link">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ======================= FORMULARIO ======================= -->
+    <main class="max-w-2xl mx-auto px-6 py-12">
+        <h1 class="text-3xl font-bold text-[#0E0482] mb-2">Agregar producto</h1>
+        <p class="text-gray-600 mb-8">Completa los datos y el producto aparecerá automáticamente en la página de Productos.</p>
+
+        <form id="form-producto" class="bg-white rounded-2xl shadow-md p-8 space-y-6">
+
+            <div>
+                <label for="nombre" class="block font-bold text-[#0E0482] mb-1">Nombre del producto</label>
+                <input type="text" id="nombre" name="nombre" required maxlength="100"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0E0482]"
+                    placeholder="Ej: Harina de garbanzo">
+            </div>
+
+            <div>
+                <label for="caracteristicas" class="block font-bold text-[#0E0482] mb-1">Características</label>
+                <textarea id="caracteristicas" name="caracteristicas" rows="4" maxlength="500"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0E0482]"
+                    placeholder="Ej: Presentación de 1kg, ideal para falafel y hummus"></textarea>
+            </div>
+
+            <div>
+                <label for="precio" class="block font-bold text-[#0E0482] mb-1">Precio (USD)</label>
+                <input type="number" id="precio" name="precio" required min="0" step="0.01"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0E0482]"
+                    placeholder="Ej: 4.50">
+            </div>
+
+            <div>
+                <label for="imagen" class="block font-bold text-[#0E0482] mb-1">Imagen del producto</label>
+                <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg, image/webp, image/gif"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-white">
+                <img id="preview" class="mt-4 hidden w-40 h-40 object-cover rounded-lg border border-gray-200" alt="Vista previa">
+            </div>
+
+            <div id="mensaje" class="hidden rounded-lg px-4 py-3 text-sm font-bold"></div>
+
+            <button type="submit" id="btn-guardar"
+                class="w-full bg-[#0E0482] hover:bg-[#1a0dab] text-white font-bold py-3 rounded-lg transition-colors">
+                Guardar producto
+            </button>
+        </form>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="bg-[#5D182A] text-white py-16 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center text-red-200 text-xs">
+            © 2026 El Arabito. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('show');
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+            document.querySelectorAll('#mobile-menu .menu-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('show');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Vista previa de la imagen seleccionada
+        const inputImagen = document.getElementById('imagen');
+        const preview = document.getElementById('preview');
+        inputImagen.addEventListener('change', () => {
+            const file = inputImagen.files[0];
+            if (!file) {
+                preview.classList.add('hidden');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = e => {
+                preview.src = e.target.result;
+                preview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // Envío del formulario
+        const form = document.getElementById('form-producto');
+        const mensaje = document.getElementById('mensaje');
+        const btnGuardar = document.getElementById('btn-guardar');
+
+        function mostrarMensaje(texto, tipo) {
+            mensaje.textContent = texto;
+            mensaje.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            if (tipo === 'ok') {
+                mensaje.classList.add('bg-green-100', 'text-green-800');
+            } else {
+                mensaje.classList.add('bg-red-100', 'text-red-800');
+            }
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            btnGuardar.disabled = true;
+            btnGuardar.textContent = 'Guardando...';
+
+            try {
+                const formData = new FormData(form);
+
+                const res = await fetch('/api/productos', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await res.json();
+
+                if (!res.ok) {
+                    throw new Error(data.error || 'Error al guardar el producto');
+                }
+
+                mostrarMensaje('Producto guardado correctamente. Ya está visible en la página de Productos.', 'ok');
+                form.reset();
+                preview.classList.add('hidden');
+            } catch (err) {
+                mostrarMensaje(err.message, 'error');
+            } finally {
+                btnGuardar.disabled = false;
+                btnGuardar.textContent = 'Guardar producto';
+            }
+        });
+    </script>
+</body>
+</html>
