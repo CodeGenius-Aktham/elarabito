@@ -1,0 +1,29 @@
+/* ============================================================
+   El Arabito - Hoja de estilos
+   Extraída del <style> inline del HTML para mantener el CSS
+   separado del marcado.
+============================================================ */
+
+/* Activa el desplazamiento suave al hacer clic en enlaces con # (anclas del menú) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tipografía y color de fondo general del sitio */
+body {
+    font-family: 'Baloo 2', sans-serif;
+    background-color: #f8eee0;
+}
+
+/* Menú móvil: empieza oculto (altura 0) y se expande con transición al abrirse */
+.mobile-menu-animate {
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.mobile-menu-animate.show {
+    max-height: 300px;
+    opacity: 1;
+}
+

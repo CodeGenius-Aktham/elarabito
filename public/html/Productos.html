@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Arabito - Agua</title>
-
-     <!-- Tailwind CSS vía CDN: genera las clases de utilidad usadas en todo el documento -->
+        <!-- Tailwind CSS vía CDN: genera las clases de utilidad usadas en todo el documento -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fuentes de Google Fonts: Baloo 2 (tipografía principal) y Caveat (títulos manuscritos) -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/agua.css">
 
+    <link rel="stylesheet" href="/css/productos.css">
+    <title>Productos</title>
 </head>
 <body>
 
-    <!-- ======================= BARRA DE NAVEGACIÓN ======================= -->
-    <nav class="w-full bg-[#0E0482] shadow-md relative">
+
+      <!-- ======================= BARRA DE NAVEGACIÓN ======================= -->
+    <nav class="w-full bg-[#5D182A] shadow-md relative">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between md:grid md:grid-cols-3">
 
             <!-- Botón hamburguesa: solo visible en móvil (oculto en md hacia arriba) -->
@@ -28,9 +28,9 @@
             <!-- Enlaces de navegación (versión escritorio) -->
             <ul id="menu-links" class="hidden md:flex space-x-6 text-white font-bold text-lg justify-start">
                 <li><a href="/index.html" class="hover:text-red-200 transition-colors">Inicio</a></li>
-                <li><a href="/html/Productos.html" class="text-amber-300 hover:text-amber-100 transition-colors">Productos</a></li>
-                <li><a href="/html/Agua.html" class="hover:text-red-200 transition-colors">Agua</a></li>
-                <li><a href="/html/Contacto.html" class="hover:text-red-200 transition-colors">Contacto</a></li>
+                <li><a href="/public/html/Productos.html" class="text-amber-300 hover:text-amber-100 transition-colors">Productos</a></li>
+                <li><a href="/public/html/Agua.html" class="hover:text-red-200 transition-colors">Agua</a></li>
+                <li><a href="/public/html/Contacto.html" class="hover:text-red-200 transition-colors">Contacto</a></li>
             </ul>
 
             <!-- Logo / nombre de la marca, centrado en la barra -->
@@ -56,110 +56,17 @@
         </div>
 
         <!-- Menú desplegable móvil: se muestra/oculta con la clase "show" vía JavaScript -->
-        <div id="mobile-menu" class="mobile-menu-animate md:hidden bg-[#0E0482] text-white flex flex-col items-center">
-            <a href="/index.html" class="py-4 w-full text-center hover:bg-[#0E0482] menu-link">Inicio</a>
-            <a href="/html/Productos.html" class="py-4 w-full text-center text-amber-300 hover:bg-[#5D182A] menu-link">Productos</a>
-            <a href="/html/Agua.html" class="py-4 w-full text-center hover:bg-[#0E0482] menu-link">agua</a>
-            <a href="/html/Contacto.html" class="py-4 w-full text-center hover:bg-[#0E0482] menu-link">Contacto</a>
+        <div id="mobile-menu" class="mobile-menu-animate md:hidden bg-[#4a1321] text-white flex flex-col items-center">
+            <a href="/index.html" class="py-4 w-full text-center hover:bg-[#5D182A] menu-link">Inicio</a>
+            <a href="/public/html/Productos.html" class="py-4 w-full text-center text-amber-300 hover:bg-[#5D182A] menu-link">Productos</a>
+            <a href="/public/html/Agua.html" class="py-4 w-full text-center hover:bg-[#5D182A] menu-link">Agua</a>
+            <a href="/public/html/Contacto.html" class="py-4 w-full text-center hover:bg-[#5D182A] menu-link">Contacto</a>
         </div>
     </nav>
 
 
-
-    <!-- ======================= CONTENIDO ======================= -->
-    <main class="agua-contenido">
-        <div class="agua-hero">
-            <div class="agua-hero__drop"></div>
-            <div class="agua-hero__content">
-                <h1 class="agua-hero__title">Agua El Arabito</h1>
-                <p class="agua-hero__subtitle">Pureza y frescura en cada gota</p>
-                <a href="#agua-whatsapp" id="whatsapp-recarga-btn-hero" class="agua-hero__btn agua-whatsapp-link">Recarga ya</a>
-            </div>
-        </div>
-    </main>
-
-
-
-
-
-
-
-<!-- ======================= OLAS + PROCESO DE PUREZA ======================= -->
-    <section class="agua-proceso">
-        <!-- Olas: dividen visualmente la gota del hero de esta sección -->
-        <div class="agua-proceso__olas">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,64 C240,120 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z"></path>
-            </svg>
-        </div>
-
-        <div class="agua-proceso__container">
-            <h2 class="agua-proceso__titulo">100% Pura, paso a paso</h2>
-
-            <div class="agua-proceso__circulo">
-                <!-- Círculo guía punteado -->
-                <div class="agua-proceso__guia"></div>
-
-                <!-- Insignia central -->
-                <div class="agua-proceso__central">
-                    <span class="agua-proceso__central-numero">100%</span>
-                    <span class="agua-proceso__central-texto">Pura</span>
-                </div>
-
-                <!-- Pasos -->
-                <div class="agua-proceso__paso agua-proceso__paso--1">
-                    <div class="agua-proceso__numero">1</div>
-                    <p class="agua-proceso__texto">Captación</p>
-                </div>
-                <div class="agua-proceso__paso agua-proceso__paso--2">
-                    <div class="agua-proceso__numero">2</div>
-                    <p class="agua-proceso__texto">Filtración</p>
-                </div>
-                <div class="agua-proceso__paso agua-proceso__paso--3">
-                    <div class="agua-proceso__numero">3</div>
-                    <p class="agua-proceso__texto">Purificación UV/Ozono</p>
-                </div>
-                <div class="agua-proceso__paso agua-proceso__paso--4">
-                    <div class="agua-proceso__numero">4</div>
-                    <p class="agua-proceso__texto">Envasado higiénico</p>
-                </div>
-                <div class="agua-proceso__paso agua-proceso__paso--5">
-                    <div class="agua-proceso__numero">5</div>
-                    <p class="agua-proceso__texto">Control de calidad</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-<!-- ======================= CTA WHATSAPP ======================= -->
-    <section class="agua-whatsapp" id=agua-whatsapp>
-        <div class="agua-whatsapp__container">
-            <svg class="agua-whatsapp__icono" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.174.198-.298.297-.496.099-.199.05-.373-.025-.521-.074-.148-.67-1.613-.918-2.208-.242-.581-.49-.501-.67-.512-.173-.009-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.955c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.031 0C5.376 0 .001 5.375.001 12.03c0 2.092.546 4.136 1.583 5.937L0 24l6.326-1.666c1.72.946 3.666 1.445 5.702 1.445 6.655 0 12.03-5.375 12.03-12.03C24.059 5.375 18.683 0 12.031 0z"/>
-            </svg>
-
-            <h2 class="agua-whatsapp__titulo">¿Se te acabó el agua?</h2>
-            <p class="agua-whatsapp__subtitulo">Escríbenos por WhatsApp y coordinamos tu recarga al instante.</p>
-
-            <a href="#" id="whatsapp-recarga-btn" class="agua-whatsapp__btn" target="_blank" rel="noopener">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.174.198-.298.297-.496.099-.199.05-.373-.025-.521-.074-.148-.67-1.613-.918-2.208-.242-.581-.49-.501-.67-.512-.173-.009-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.955c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.031 0C5.376 0 .001 5.375.001 12.03c0 2.092.546 4.136 1.583 5.937L0 24l6.326-1.666c1.72.946 3.666 1.445 5.702 1.445 6.655 0 12.03-5.375 12.03-12.03C24.059 5.375 18.683 0 12.031 0z"/>
-                </svg>
-                Recargar por WhatsApp
-            </a>
-        </div>
-    </section>
-
-
-
-
-    
-
-      <!-- ======================= FOOTER ======================= -->
-    <footer class="bg-[#0E0482] text-white py-16 mt-16">
+          <!-- ======================= FOOTER ======================= -->
+    <footer class="bg-[#5D182A] text-white py-16 mt-16">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
 
             <!-- Columna 1: descripción breve de la marca -->
@@ -173,9 +80,9 @@
                 <h4 class="text-xl font-bold mb-4 text-amber-300">Navegación</h4>
                 <ul class="space-y-2 text-red-100">
                     <li><a href="/index.html" class="hover:text-white">Inicio</a></li>
-                    <li><a href="/html/Productos.html" class="hover:text-white">Productos</a></li>
-                    <li><a href="/html/Nosotros.html" class="hover:text-white">Nosotros</a></li>
-                    <li><a href="/html/Contacto.html" class="hover:text-white">Contacto</a></li>
+                    <li><a href="/public/html/Productos.html" class="hover:text-white">Productos</a></li>
+                    <li><a href="/public/html/Nosotros.html" class="hover:text-white">Nosotros</a></li>
+                    <li><a href="/public/html/Contacto.html" class="hover:text-white">Contacto</a></li>
                 </ul>
             </div>
 
@@ -212,9 +119,11 @@
             © 2026 El Arabito. Todos los derechos reservados.
         </div>
     </footer>
+    
+</body>
 
-    <script>
-       /* ========================================================
+<script>
+        /* ========================================================
            MENÚ MÓVIL
            Controla la apertura/cierre del menú hamburguesa y lo
            cierra automáticamente al seleccionar cualquier enlace.
@@ -238,7 +147,5 @@
                 });
             });
         }
-
-    </script>
-</body>
+</script>
 </html>
